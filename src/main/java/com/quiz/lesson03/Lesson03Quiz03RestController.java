@@ -16,10 +16,11 @@ public class Lesson03Quiz03RestController {
 	// http://localhost/lesson03/quiz03/1?id=8&price=70000
 	@RequestMapping("/lesson03/quiz03")
 	public String quiz03(
-			@RequestParam(value="id") int id,
-			@RequestParam(value="price") int price) {
+			@RequestParam("id") int id,
+			@RequestParam("type") String type,
+			@RequestParam("price") int price) {
 		
-		int row = realEstateBO.updateRealEstateById(id, price);
+		int row = realEstateBO.updateRealEstateById(id, type, price);
 		return "수정 성공 : " + row;
 	}
 }
