@@ -38,13 +38,25 @@ public class Lesson04Quiz01Controller {
 	}
 	
 	// http://localhost/lesson04/quiz01/seller_info
+	// http://localhost/lesson04/quiz01/seller_info?id=3
 	@GetMapping("/lesson04/quiz01/seller_info")
-	public String quiz01_2(Model model) {
-		// DB select - 가장 최근 추가된 사람 한명 가져오기
-		Seller seller = sellerBO.getLastSeller();
+	public String quiz01_2(
+			@RequestParam(value="id", required=false) Integer id,
+			Model model) {
 		
-		model.addAttribute("result", seller);	// 결과 jsp뷰화면에 결과 객체값을 내려준다.
+		Seller seller = null;
+		if (id == null) {
+			seller = sellerBO.getLastSeller();
+		} else {
+			seller = sellerBO.getSellerById(id);
+		}
+		// DB select - 가장 최근 추가된 사람 한명 가져오기
+		
+		
+		model.addAttribute("result", seller);
 		model.addAttribute("subject", "판매자 정보");
 		return "lesson04/seller_info";
 	}
+	
+	
 }
