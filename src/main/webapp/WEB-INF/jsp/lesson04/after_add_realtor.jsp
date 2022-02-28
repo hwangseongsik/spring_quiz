@@ -15,7 +15,7 @@
 	<div class="container">
 		<h1>${subject}</h1>
 		
-		<table class="tabel">
+		<table class="table">
 			<tr>
 				<th>ID</th>
 				<td>${result.id}</td>
