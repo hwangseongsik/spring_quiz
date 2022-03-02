@@ -48,10 +48,10 @@
 					<td>${user.name}</td>
 					<td>${user.phoneNumber}</td>
 					<c:choose>
-						<c:when test="${user.grade eq VIP}">
+						<c:when test="${user.grade eq 'VIP'}">
 							<td class="text-danger">${user.grade}</td>
 						</c:when>
-						<c:when test="${user.grade eq GOLD}">
+						<c:when test="${user.grade eq 'GOLD'}">
 							<td class="text-warning">${user.grade}</td>
 						</c:when>
 						<c:otherwise>
