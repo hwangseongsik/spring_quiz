@@ -65,7 +65,7 @@
 					<c:otherwise>
 						<td>${user.point}P</td>
 					</c:otherwise>
-				</c:choose>
+					</c:choose>
 				</tr>
 			</c:forEach>
 			</tbody>

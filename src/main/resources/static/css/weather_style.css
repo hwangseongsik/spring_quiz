@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+		#wrap {width:1200px; margin:auto;}
+		.info {height:700px;}
+		.img1 {width:190px; height:100px;}
+		ul {list-style-type: none; margin:0; width:200px;}
+		li a {display: block; color: white; padding: 6px;}
+		
+		footer {height:50px;}
