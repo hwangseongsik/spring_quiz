@@ -3,7 +3,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="com.quiz.lesson06.dao.FavoriteDAO">
-	<insert id="insertFavoriteList" parameterType="com.quiz.lesson06.model.Favorite">
+	<insert id="insertFavorite" parameterType="map">
  		INSERT INTO `favorite`
  		(
  			`name`
@@ -30,5 +30,26 @@
 		FROM
 			`favorite`
  	</select>
+ 	
+ 	<select id="selectFavortieByUrl" parameterType="String" resultType="com.quiz.lesson06.model.Favorite">
+ 		SELECT
+ 			`id`
+ 			,`name`
+			,`url`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`favorite`
+		WHERE
+			`url` = #{url}
+ 	</select>
+ 	
+ 	<delete id="deleteFavoriteById" parameterType="int">
+ 		DELETE
+ 		FROM
+ 			`favorite`
+ 		WHERE
+ 			`id` = #{id}
+ 	</delete>
 </mapper>
  
